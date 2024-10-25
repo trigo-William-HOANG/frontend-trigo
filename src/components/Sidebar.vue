@@ -63,7 +63,7 @@
   }
   
   .sidebar.close {
-    width: 55px; /* Réduit la largeur quand la sidebar est fermée */
+    width: 60px; /* Réduit la largeur quand la sidebar est fermée */
   }
   
   .sidebar .logo {
@@ -73,7 +73,7 @@
   }
   
   .sidebar .logo button {
-    font-size: 24px;
+    font-size: 30px;
     background: var(--verttrigo);
     border: none;
     cursor: pointer;
@@ -81,6 +81,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    border-radius: 5px;
     
   }
 
@@ -128,7 +129,7 @@
     opacity: 0;
   }
   .sidebar.close .logo button {
-    font-size: 24px;
+    font-size: 30px;
   }
   .sidebar.close .side-menu li a .menu-text {
     opacity: 0; /* Cache le texte du menu quand la sidebar est fermée */

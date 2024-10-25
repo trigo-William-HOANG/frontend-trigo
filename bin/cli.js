@@ -15,7 +15,7 @@ const runCommand = command => {
 }
 
 const repoName = process.argv[2];
-const gitCheckoutCommand = `git clone --depth1 https://github.com/trigo-William-HOANG/frontend-trigo ${repoName}`;
+const gitCheckoutCommand = `git clone  https://github.com/trigo-William-HOANG/frontend-trigo ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 
 console.log('Clonage du frontend TRIGO Web App');
