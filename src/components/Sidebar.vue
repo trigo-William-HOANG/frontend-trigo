@@ -22,6 +22,13 @@
         </li> -->
         <!-- Ajoutez d'autres éléments de menu comme nécessaire -->
       </ul>
+
+      <div class="sidebar-footer">
+        <a href="#" class="sidebar-logout">
+          <i class="bx bx-log-out"></i>
+          <span class="menu-text">Déconnexion</span>
+        </a>
+      </div>
     </div>
   </template>
   
@@ -100,6 +107,24 @@
     overflow: hidden; /* Pour éviter les éléments qui débordent */
   }
   
+  .sidebar .sidebar-footer{
+
+    padding: 15px;
+    background: var(--verttrigo);
+    color: white;
+    transition: background 0.3s;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sidebar .sidebar-footer .sidebar-logout {
+    text-decoration: none;
+    color: white;
+  }
+
   .sidebar .side-menu li.active {
     background-color: var(--verttrigo);
   }

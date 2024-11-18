@@ -5,9 +5,8 @@
         <div class="slot-link">
           <slot name="link"></slot>
         </div>
-        <img class="logo" src="./../assets/LogoTrigo.png" alt="Logo de l'entreprise">
         <!-- <a href="#"><i class="bx bx-help-circle"></i></a> -->
-        <a href="#" class="circle-user-dropdown">WH</a>
+        <a href="#" class="circle-user-dropdown">?</a>
       </nav>
     </div>
 
@@ -97,8 +96,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  
 }
+
 
 .content nav {
   height: 80px; /* Augmenter la hauteur de la navbar */

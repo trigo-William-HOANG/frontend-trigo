@@ -3,12 +3,12 @@ import { ref, computed } from "vue";
 import { defineAsyncComponent } from "vue";
 import Home from "./pages/Home.vue";
 import Test from "./pages/Test.vue";
-
+import Trigoaccess from "./pages/Trigoaccess.vue";
 
 const routes = {
   "/": Home,
   "/test": Test,
-
+  "/trigo-access": Trigoaccess,
 };
 
 // Reactive variable for the current path

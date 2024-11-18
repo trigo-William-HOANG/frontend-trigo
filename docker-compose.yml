@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      # Ajoutez ici des variables d'environnement si nécessaire
+      NODE_ENV: production
+    restart: always
