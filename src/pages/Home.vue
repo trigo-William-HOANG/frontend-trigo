@@ -4,7 +4,7 @@
       <Searchbar class="barre" @update:search="updateSearchQuery" />
     </template>
     <template #content-title>
-      <h1>Applications</h1>
+      <h1>{{ title }}</h1>
     </template>
     <template #content-subtitle>
       <p>Vous pouvez trouver ici toutes les applications TRIGO</p>
@@ -24,7 +24,8 @@ import Searchbar from "./../components/Searchbar.vue";
 import app1 from '../assets/app1.webp';
 import app2 from '../assets/app2.webp';
 import app3 from '../assets/app3.webp';
-import { ref } from 'vue';
+import axios from 'axios';
+import { ref, onMounted } from 'vue';
 
 // Extraction des données pour afficher les applications
 const cardData = [
@@ -87,6 +88,7 @@ const cardData = [
 const searchQuery = ref('');
 const isLoading = ref(false);
 const filteredCards = ref([]);
+const title = ref('Applications');
 
 // Simule un chargement asynchrone des données (comme un appel d'API)
 const fetchCards = async (query) => {
@@ -112,6 +114,16 @@ const updateSearchQuery = (query) => {
 
 // Charger les cartes initialement
 fetchCards('');
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:8080/api/message');
+    console.log(response.data.message);
+    title.value = response.data.message;
+  } catch (error) {
+    console.error('Error fetching message:', error);
+  }
+});
 </script>
 <!-- A décommenter si on veut utiliser la sidebar -->
 <style scoped>
@@ -143,4 +155,4 @@ body.sidebar-closed .content-main {
   transform: translate(183%, -50%);
 }
 
-</style> 
+</style>

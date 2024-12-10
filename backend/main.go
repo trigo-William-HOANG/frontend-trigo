@@ -1,16 +1,20 @@
 package main
 
 import (
-	"fmt"
+	"encoding/json"
 	"net/http"
+
+	"github.com/rs/cors"
 )
 
 func main() {
-	http.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello from the backend!")
+	http.HandleFunc("/api/message", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]string{
+			"message": "test",
+		})
 	})
 
-	// ...existing code...
-
-	http.ListenAndServe(":8080", nil)
+	handler := cors.Default().Handler(http.DefaultServeMux)
+	http.ListenAndServe(":8080", handler)
 }
